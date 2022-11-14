@@ -27,13 +27,13 @@ public class Scenario3Page extends TestBase{
 	@FindBy(xpath = "//*[@id='login_Layer']")
 	WebElement buttonLogin;
 	
-	@FindBy(xpath = "//*[@id='root']/div[4]/div[2]/div/div/div[2]/div/form/div[2]/input")
+	@FindBy(xpath = "//input[@type='text' and @placeholder='Enter your active Email ID / Username']")
 	WebElement textEmailaddress;
 	
-	@FindBy(xpath = "//*[@id='root']/div[4]/div[2]/div/div/div[2]/div/form/div[3]/input")
+	@FindBy(xpath = "//input[@type='password' and @placeholder='Enter your password']")
 	WebElement textPassword;
 	
-	@FindBy(xpath = "//*[@id='root']/div[4]/div[2]/div/div/div[2]/div/form/div[6]/button")
+	@FindBy(xpath = "//button[@type='submit']")
 	WebElement buttonSubmit;
 	
 	@FindBy(xpath = 	"//div[@class='server-err']")
