@@ -24,11 +24,11 @@ public class Scenario1Page extends TestBase  {
 
 	@FindBy(xpath = "//div[@class='col-lg-12']/h3")
 	WebElement LoginPaneTitle;
-
-	@FindBy(xpath = "(//input[@class='suggestor-input '])[1]")
+	
+	@FindBy(xpath = "//input[@type='text' and @placeholder='Enter skills / designations / companies']")	
 	WebElement textSkillDesignation;
 	
-	@FindBy(xpath = "(//input[@class='suggestor-input '])[2]")
+	@FindBy(xpath = "//input[@type='text' and @placeholder='Enter location']")
 	WebElement inputLocation;
 	
 	@FindBy(xpath = "//input[@type='password']")
@@ -40,20 +40,21 @@ public class Scenario1Page extends TestBase  {
 	@FindBy(xpath = "//input[@id='expereinceDD']")
 	WebElement expereinceDD;
 	
-	//*[@id="sa-dd-scrollexpereinceDD"]/div[1]/ul/li[10]/div/span
-	
-	@FindBy(xpath = "//*[@id=\"sa-dd-scrollexpereinceDD\"]/div[1]/ul/li[10]/div/span")
+	@FindBy(xpath = "//div[@id='sa-dd-scrollexpereinceDD']//li[@value='#9']")
 	WebElement scrollexpereinceDD;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div[6]/div/div/div[6]")
+	
+	@FindBy(xpath = "//div[@class='qsbSubmit']")
 	WebElement searchButton;
+	
 	
 	@FindBy(xpath = "(//a[@class='title fw500 ellipsis'])[1]")
 	WebElement comapnyTitle;
 	
-	@FindBy(xpath = "//*[@id='root']/div[4]/div/section[2]/div[2]/article[1]/div[1]/div[1]/a")
+
+	@FindBy(xpath = "(//a[@class='title fw500 ellipsis'])[1]")
 	WebElement comapnyLink;
-	
+
 	@FindBy(xpath = "//*[@id='root']/div[4]/div/section[2]/div[2]/article[2]/div[1]/div[1]/a")
 	WebElement comapnyLink2;
 	
@@ -66,10 +67,13 @@ public class Scenario1Page extends TestBase  {
 	@FindBy(xpath = 	"//*[@id='contact']")
 	WebElement ComapanyContact;
 	
-	@FindBy(xpath = "//*[@id='contactBlock']/div/div/p[2]/span")
+	@FindBy(xpath = "//div[@class='comp-info-detail']/span")
 	WebElement ComapanyAddress;
+		
+	@FindBy(xpath = "//div[@id='contact']")
+	WebElement ContactButton;
 	
-	@FindBy(xpath = "//*[@id='root']/main/div[2]/div[2]/section[4]/div[3]/span")
+	@FindBy(xpath = "(//div[@id='contactBlock']//span)[2]")
 	WebElement ComapanyAddress2;
 	
 	@FindBy(xpath = "//button[contains(text(),'Sign Up')]")
@@ -126,7 +130,7 @@ public class Scenario1Page extends TestBase  {
 		sendKeys(driver, inputLocation, 5, "pune");
 		clickOn(driver, searchButton, 5);
 		clickOn(driver, comapnyLink, 5);
-		
+
 		// hold all window handles in array list
 		ArrayList<String> newTb = new ArrayList<String>(driver.getWindowHandles());
 		// switch to new tab
@@ -135,22 +139,14 @@ public class Scenario1Page extends TestBase  {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		// Scroll down till the bottom of the page
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
-		
-	    clickOn(driver, ComapanyContact, 5);
-	    
-	    
-	   
+
 		System.out.println("Company Name is : " + driver.getTitle());
 
 		String CompanyAddress = ComapanyAddress.getText();
 		System.out.println("Comapny Address  is : " + CompanyAddress);
-		
-	    
-	    
-	    
-	    
-		driver.close();
 
+		driver.close();
+		
 		driver.switchTo().window(newTb.get(0));
 
 		clickOn(driver, comapnyLink2, 5);
@@ -165,16 +161,14 @@ public class Scenario1Page extends TestBase  {
 	    
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 		
+		clickOn(driver,ContactButton , 5);
+		
 		String CompanyAddress2 = ComapanyAddress2.getText();
 		System.out.println("2nd Comapny Address  is : " + CompanyAddress2);
-		
-	    
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].click();", buttonLogin);
 
 		return new Scenario1Page();
 	}
-	
+
 	public static void sendKeys(WebDriver driver, WebElement element, int timeout, String value) {
 		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(element));
 		element.sendKeys(value);
@@ -185,7 +179,6 @@ public class Scenario1Page extends TestBase  {
 		element.click();
 
 	}
-	
-	}
 
+}
 
