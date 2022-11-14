@@ -1,5 +1,7 @@
 package com.naukari.testcases;
 
+import java.io.IOException;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -22,7 +24,7 @@ public class Scenario3Test extends TestBase {
 	}
 	
 	@Test(priority = 1)
-	public void InValidLoginTestAlert() {
+	public void InValidLoginTestAlert() throws IOException {
 		scenario3Page = scenario3Page.login(properties.getProperty("usernameInavlid"),
 				properties.getProperty("passworInvalid"));
 	}

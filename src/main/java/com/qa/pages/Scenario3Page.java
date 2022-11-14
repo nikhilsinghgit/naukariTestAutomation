@@ -1,5 +1,13 @@
 package com.qa.pages;
 
+import static org.testng.Assert.assertTrue;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -28,23 +36,30 @@ public class Scenario3Page extends TestBase{
 	@FindBy(xpath = "//*[@id='root']/div[4]/div[2]/div/div/div[2]/div/form/div[6]/button")
 	WebElement buttonSubmit;
 	
+	@FindBy(xpath = 	"//div[@class='server-err']")
+	WebElement serverErorr;
+	
+	
+
+	
 	public Scenario3Page() {
 
 		PageFactory.initElements(driver, this);
 	}
 	
 	
-	public Scenario3Page login(String usernamn, String password) {
+	public Scenario3Page login(String usernamn, String password) throws IOException {
 		clickOn(driver, buttonLogin, 5);
 		sendKeys(driver, textEmailaddress, 5, usernamn);
 		sendKeys(driver, textPassword, 5, password);
 		clickOn(driver, buttonSubmit, 5);
 		
-//		sendKeys(driver, textEmailaddress, 5, usernamn);
-//		sendKeys(driver, textPassword, 5, password);
-//		clickOn(driver, buttonLogin, 5);
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		js.executeScript("arguments[0].click();", buttonLogin);
+		WebElement dialog = serverErorr;
+		assertTrue(dialog.isDisplayed());  
+		
+		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		// Now you can do whatever you need to do with it, for example copy somewhere
+		FileUtils.copyFile(scrFile, new File("c:\\tmp\\screenshot.png"));
 
 		return new Scenario3Page();
 	}
