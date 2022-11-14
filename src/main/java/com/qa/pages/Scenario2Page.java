@@ -58,11 +58,10 @@ public class Scenario2Page extends TestBase {
 	public Scenario2Page homePage() {
 		
 		mouseOver(driver);
-		
+
 		clickOn(driver, resumeTitle, 5);
-			
+
 		Process1(driver, "Resume Writing for Experienced and Mid Level Professionals | Naukri Fastforward");
-		
 		
 		mouseOver(driver);
 	
@@ -70,7 +69,6 @@ public class Scenario2Page extends TestBase {
 		
 		Process1(driver, "Visual Resume Writing for Experienced Professionals | Naukri Fastforward");
 		driver.navigate().refresh();
-		
 		
 		
 		mouseOver(driver);
@@ -124,7 +122,6 @@ public void Process1(WebDriver driver, String assertValue) {
 			driver.close();
 			
 			driver.switchTo().window(newTb.get(0));
-}
-
+	}
 
 }
