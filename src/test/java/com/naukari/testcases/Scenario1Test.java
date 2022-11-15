@@ -21,7 +21,7 @@ public class Scenario1Test extends TestBase {
 		scenario1Page = new Scenario1Page();
 	}
 	@Test
-	public void InValidLoginTestAlert() throws InterruptedException {
+	public void Scenario1() throws InterruptedException {
 		scenario1Page = scenario1Page.homePage();
 
 	}
