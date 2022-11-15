@@ -36,7 +36,7 @@ public class Scenario3Page extends TestBase{
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement buttonSubmit;
 	
-	@FindBy(xpath = 	"//div[@class='server-err']")
+	@FindBy(xpath = "//div[@class='server-err']")
 	WebElement serverErorr;
 	
 	

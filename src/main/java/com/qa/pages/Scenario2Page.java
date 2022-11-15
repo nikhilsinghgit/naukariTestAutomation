@@ -34,18 +34,35 @@ public class Scenario2Page extends TestBase {
 	WebElement comapnyTitle;
 	
 	
-	@FindBy(xpath = "//*[@id='root']/div[4]/div[2]/nav/ul/li[3]/a")
+//	@FindBy(xpath = "//*[@id='root']/div[4]/div[2]/nav/ul/li[3]/a")
+//	WebElement servicesAnchorDD;
+	
+	@FindBy(xpath = "//li[@class='nI-gNb-menuItems']//a//div[contains(text(),'Services')]")
 	WebElement servicesAnchorDD;
 	
-	@FindBy(xpath = "//*[@id='root']/div[4]/div[2]/nav/ul/li[3]/div/ul[1]/li[2]/a")
+	
+	
+//	@FindBy(xpath = "//*[@id='root']/div[4]/div[2]/nav/ul/li[3]/div/ul[1]/li[2]/a")
+//	WebElement resumeTitle;
+	
+	@FindBy(xpath = "//li[@class='nI-gNb-menuItems']//a//div[contains(text(),'Text resume')]")
 	WebElement resumeTitle;
 	
-	@FindBy(xpath ="//*[@id='root']/div[4]/div[2]/nav/ul/li[3]/div/ul[1]/li[3]/a")
+
+	
+//	@FindBy(xpath ="//*[@id='root']/div[4]/div[2]/nav/ul/li[3]/div/ul[1]/li[3]/a")
+//	WebElement visualResumeTitle;
+		
+	@FindBy(xpath =	"//li[@class='nI-gNb-menuItems']//a//div[contains(text(),'Visual resume')]")
 	WebElement visualResumeTitle;
 	
 	
-	@FindBy(xpath ="//*[@id='root']/div[4]/div[2]/nav/ul/li[3]/div/ul[1]/li[4]/a")
+//	@FindBy(xpath ="//*[@id='root']/div[4]/div[2]/nav/ul/li[3]/div/ul[1]/li[4]/a")
+//	WebElement resumeCritiqueTitle;
+	
+	@FindBy(xpath ="//li[@class='nI-gNb-menuItems']//a//div[contains(text(),'Resume critique')]")
 	WebElement resumeCritiqueTitle;
+	
 	
 	
 	
@@ -97,31 +114,29 @@ public class Scenario2Page extends TestBase {
 	
 public  void mouseOver(WebDriver driver){
 		
-		//Creating object of an Actions class
+		// Creating object of an Actions class
 		Actions action = new Actions(driver);
 
-		//Performing the mouse hover action on the target element.
+		// Performing the mouse hover action on the target element.
 		action.moveToElement(servicesAnchorDD).perform();
-		
-		
+
 	}
 
 
 public void Process1(WebDriver driver, String assertValue) {
 	
-	// hold all window handles in array list
-			ArrayList<String> newTb = new ArrayList<String>(driver.getWindowHandles());
-			// switch to new tab
-			driver.switchTo().window(newTb.get(1));
+		// hold all window handles in array list
+		ArrayList<String> newTb = new ArrayList<String>(driver.getWindowHandles());
+		// switch to new tab
+		driver.switchTo().window(newTb.get(1));
 			
-			
-			String pageTitle = driver.getTitle();
+		String pageTitle = driver.getTitle();
 
-			Assert.assertEquals(pageTitle, assertValue);
-			
-			driver.close();
-			
-			driver.switchTo().window(newTb.get(0));
+		Assert.assertEquals(pageTitle, assertValue);
+
+		driver.close();
+
+		driver.switchTo().window(newTb.get(0));
 	}
 
 }
