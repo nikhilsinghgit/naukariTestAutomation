@@ -129,6 +129,7 @@ public class Scenario1Page extends TestBase  {
 		clickOn(driver, scrollexpereinceDD, 5);
 		sendKeys(driver, inputLocation, 5, "pune");
 		clickOn(driver, searchButton, 5);
+		Thread.sleep(10000);
 		clickOn(driver, comapnyLink, 5);
 		
 		Thread.sleep(10000);
@@ -152,6 +153,7 @@ public class Scenario1Page extends TestBase  {
 		driver.switchTo().window(newTb.get(0));
 
 		clickOn(driver, comapnyLink2, 5);
+		Thread.sleep(10000);
 
 		// hold all window handles in array list
 		ArrayList<String> newTb2 = new ArrayList<String>(driver.getWindowHandles());
@@ -165,8 +167,8 @@ public class Scenario1Page extends TestBase  {
 		
 		//clickOn(driver,ContactButton , 5);
 		
-		String CompanyAddress2 = ComapanyAddress.getText();
-		System.out.println("2nd Comapny Address  is : " + CompanyAddress2);
+		//String CompanyAddress2 = ComapanyAddress.getText();
+		//System.out.println("2nd Comapny Address  is : " + CompanyAddress2);
 
 		return new Scenario1Page();
 	}
