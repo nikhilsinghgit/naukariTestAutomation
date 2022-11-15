@@ -123,13 +123,15 @@ public class Scenario1Page extends TestBase  {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public Scenario1Page homePage() {
+	public Scenario1Page homePage() throws InterruptedException {
 		sendKeys(driver, textSkillDesignation, 5, "Automation Testing");
 		clickOn(driver, expereinceDD, 5);
 		clickOn(driver, scrollexpereinceDD, 5);
 		sendKeys(driver, inputLocation, 5, "pune");
 		clickOn(driver, searchButton, 5);
 		clickOn(driver, comapnyLink, 5);
+		
+		Thread.sleep(10000);
 
 		// hold all window handles in array list
 		ArrayList<String> newTb = new ArrayList<String>(driver.getWindowHandles());
@@ -161,9 +163,9 @@ public class Scenario1Page extends TestBase  {
 	    
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 		
-		clickOn(driver,ContactButton , 5);
+		//clickOn(driver,ContactButton , 5);
 		
-		String CompanyAddress2 = ComapanyAddress2.getText();
+		String CompanyAddress2 = ComapanyAddress.getText();
 		System.out.println("2nd Comapny Address  is : " + CompanyAddress2);
 
 		return new Scenario1Page();
