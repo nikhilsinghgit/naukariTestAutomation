@@ -24,7 +24,7 @@ public class Scenario3Test extends TestBase {
 	}
 	
 	@Test(priority = 1)
-	public void InValidLoginTestAlert() throws IOException {
+	public void Scenario3() throws IOException {
 		scenario3Page = scenario3Page.login(properties.getProperty("usernameInavlid"),
 				properties.getProperty("passworInvalid"));
 	}

@@ -23,7 +23,7 @@ public class Scenario2Test extends TestBase{
 	
 	
 	@Test
-	public void InValidLoginTestAlert() throws InterruptedException {
+	public void Scenario2() throws InterruptedException {
 		scenario2Page = scenario2Page.homePage();
 
 	}
