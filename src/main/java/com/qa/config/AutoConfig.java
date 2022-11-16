@@ -6,14 +6,6 @@ public class AutoConfig {
 	
 	public Properties properties;
 	
-	//IDP 
-		public static String countryKvkNumber = AutoConfiguration.initAutomatioProperties().getProperty("kvkNumber");
-		public static String localCountryName = AutoConfiguration.initAutomatioProperties().getProperty("localCountry");
-		public static String foreignCountryName = AutoConfiguration.initAutomatioProperties().getProperty("foreignCountry");
-		public static String selectAdministrationName = AutoConfiguration.initAutomatioProperties().getProperty("administrationName");
-		public static String selectAdministrationSbxTesting2 = AutoConfiguration.initAutomatioProperties().getProperty("selectAdministrationSbxTesting2");
-		public static String selectAdministrationDemo= AutoConfiguration.initAutomatioProperties().getProperty("selectAdministrationDemo");
-
 		
 		//Base Class Constants	
 		public final static long pageLoadTimeout = 20;
