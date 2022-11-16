@@ -145,8 +145,8 @@ public class Scenario1Page extends TestBase  {
 
 		System.out.println("Company Name is : " + driver.getTitle());
 
-		String CompanyAddress = ComapanyAddress.getText();
-		System.out.println("Comapny Address  is : " + CompanyAddress);
+//		String CompanyAddress = ComapanyAddress.getText();
+//		System.out.println("Comapny Address  is : " + CompanyAddress);
 
 		driver.close();
 		
