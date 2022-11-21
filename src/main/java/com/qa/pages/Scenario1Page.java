@@ -145,9 +145,6 @@ public class Scenario1Page extends TestBase  {
 
 		System.out.println("Company Name is : " + driver.getTitle());
 
-//		String CompanyAddress = ComapanyAddress.getText();
-//		System.out.println("Comapny Address  is : " + CompanyAddress);
-
 		driver.close();
 		
 		driver.switchTo().window(newTb.get(0));
@@ -164,11 +161,6 @@ public class Scenario1Page extends TestBase  {
 		System.out.println("2nd Company Name is : " + driver.getTitle());
 	    
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
-		
-		//clickOn(driver,ContactButton , 5);
-		
-		//String CompanyAddress2 = ComapanyAddress.getText();
-		//System.out.println("2nd Comapny Address  is : " + CompanyAddress2);
 
 		return new Scenario1Page();
 	}
