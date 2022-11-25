@@ -165,10 +165,10 @@ public class Scenario1Page extends TestBase  {
 	    
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 		
-		//clickOn(driver,ContactButton , 5);
+		clickOn(driver,ContactButton , 5);
 		
-		//String CompanyAddress2 = ComapanyAddress.getText();
-		//System.out.println("2nd Comapny Address  is : " + CompanyAddress2);
+		String CompanyAddress2 = ComapanyAddress.getText();
+		System.out.println("2nd Comapny Address  is : " + CompanyAddress2);
 
 		return new Scenario1Page();
 	}

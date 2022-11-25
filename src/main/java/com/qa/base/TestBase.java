@@ -38,14 +38,6 @@ public void Initialize() throws Exception {
 	eventDriver.manage().timeouts().pageLoadTimeout(pageLoadTimeout, TimeUnit.SECONDS);
 	eventDriver.manage().timeouts().implicitlyWait(implicitWait, TimeUnit.SECONDS);
 	eventDriver.get(properties.getProperty("urlNaukri"));
-	//Thread.sleep(timeDelay);
-	//eventDriver.findElement(By.xpath("//button[@id='details-button']")).click();
-	//eventDriver.findElement(By.xpath("//a[@id='proceed-link']")).click();
-	//eventDriver.get(properties.getProperty("urlTestServer"));
-	//eventDriver.findElement(By.xpath("//input[@id='txtEmailAddressID']")).sendKeys(properties.getProperty("username"));
-	//eventDriver.findElement(By.xpath("//input[@id='pwdPasswordID']")).sendKeys(properties.getProperty("password"));
-	//eventDriver.findElement(By.xpath("//button[@type='submit']")).click();
-	
 }
 
 public static void log(String message) {
